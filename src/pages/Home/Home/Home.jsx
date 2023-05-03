@@ -7,8 +7,6 @@ const Home = () => {
     return (
         <Container className=''>
             <Banner></Banner>
-            <h1>This is home</h1>
-            
             <ChefsCard></ChefsCard>
         </Container>
     );

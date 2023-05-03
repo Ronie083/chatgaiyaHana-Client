@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Card, Col, Container, Row } from 'react-bootstrap';
 import './ChefsCard.css'
 import { Link } from 'react-router-dom';
-import { FcAlarmClock, FcCalendar, FcLike, FcReading } from "react-icons/fc";
+import { FcCalendar, FcLike, FcReading } from "react-icons/fc";
 
 const ChefsCard = () => {
     const [chefs, setChefs] = useState([]);

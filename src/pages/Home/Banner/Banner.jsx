@@ -8,7 +8,7 @@ import kacchi from '../../../assets/Kacchi-Biryani.jpg'
 const Banner = () => {
 
     return (
-        <Container>
+        <Container className='my-5'>
             <Carousel variant="dark">
                 <Carousel.Item>
                     <img

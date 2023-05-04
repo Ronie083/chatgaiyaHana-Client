@@ -22,7 +22,6 @@ const ChefsCard = () => {
                     {chefs.map(chef => (
                         <Col key={chef.id}>
                             <Card>
-                                {/* <Card.Img variant="top" src={chef.chefPicture} /> */}
                                 <img id='cardImg' src={chef.chefPicture} alt="" />
                                 <Card.Body>
                                     <Card.Title>{chef.chefName}</Card.Title>

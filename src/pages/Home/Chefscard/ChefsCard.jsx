@@ -34,7 +34,7 @@ const ChefsCard = () => {
                                         <FcReading></FcReading> {chef.numRecipes} number of recipes available.
                                     </Card.Text>
                                     <Card.Footer>
-                                        <Link id='cardLink'>View Recipes</Link>
+                                        <Link to={`/chefs/${chef.id}`} id='cardLink'>View Recipes</Link>
                                     </Card.Footer>
                                 </Card.Body>
                             </Card>

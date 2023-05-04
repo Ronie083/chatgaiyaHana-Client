@@ -4,6 +4,8 @@ import Footer from '../pages/Shared/Footer/Footer';
 import Home from '../pages/Home/Home/Home';
 import { Col, Container, Row } from 'react-bootstrap';
 import RightContent from '../pages/Shared/Footer/RightContent/RightContent/RightContent';
+import { Outlet } from 'react-router-dom';
+import Chef from '../pages/Home/Chef/Chef';
 
 const Main = () => {
     return (

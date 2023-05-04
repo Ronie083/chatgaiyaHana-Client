@@ -4,6 +4,8 @@ import { useLoaderData } from 'react-router-dom';
 import './Recipe.css'
 import { FcBookmark, FcComboChart } from "react-icons/fc";
 import { toast } from 'react-toastify';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 const Recipe = () => {
@@ -26,6 +28,7 @@ const Recipe = () => {
                                 <div>
                                     <FcComboChart></FcComboChart>{recipe.rating}
                                     <button id='bookmark' onClick={handleBookmarkClick}> <FcBookmark></FcBookmark> </button>
+                                    <ToastContainer />
                                 </div>
                             </Card.Header>
                             <Card.Body>

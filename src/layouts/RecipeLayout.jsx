@@ -5,7 +5,7 @@ import Home from '../pages/Home/Home/Home';
 import { Col, Container, Row } from 'react-bootstrap';
 import RightContent from '../pages/Shared/Footer/RightContent/RightContent/RightContent';
 
-const Main = () => {
+const RecipeLayout = () => {
     return (
         <div>
             <Header></Header>
@@ -24,4 +24,4 @@ const Main = () => {
     );
 };
 
-export default Main;
+export default RecipeLayout;

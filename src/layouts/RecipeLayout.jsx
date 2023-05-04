@@ -4,6 +4,7 @@ import Footer from '../pages/Shared/Footer/Footer';
 import Home from '../pages/Home/Home/Home';
 import { Col, Container, Row } from 'react-bootstrap';
 import RightContent from '../pages/Shared/Footer/RightContent/RightContent/RightContent';
+import Chef from '../pages/Home/Chef/Chef';
 
 const RecipeLayout = () => {
     return (
@@ -12,7 +13,7 @@ const RecipeLayout = () => {
             <Container>
                 <Row>
                     <Col lg={9}>
-                        <Home></Home>
+                        <Chef></Chef>
                     </Col>
                     <Col lg={3}>
                         <RightContent></RightContent>

@@ -11,8 +11,7 @@ const Chef = () => {
     const chef = useLoaderData();
     const { chefName, chefPicture, chefDetails, yearsOfExperience, numRecipes, likes, recipes } = chef;
     return (
-        <Container>
-            <h1>Chefs details here:</h1>
+        <Container className='mt-5'>
             <div>
                 <Card>
                     <Card.Header className='d-flex'>
@@ -20,9 +19,6 @@ const Chef = () => {
                             <span className='m-2'><FcLike></FcLike> {likes} Likes</span>
                             <span className='m-2'><FcCalendar></FcCalendar> {yearsOfExperience} Years of Experience</span>
                             <span className='m-2'><FcReading></FcReading> {numRecipes} number of recipes available.</span>
-                        </div>
-                        <div>
-                            <button id='fvrt'><FcBookmark></FcBookmark></button>
                         </div>
                     </Card.Header>
                     <Card.Img id='chefCardImg' variant="top" src={chefPicture} />

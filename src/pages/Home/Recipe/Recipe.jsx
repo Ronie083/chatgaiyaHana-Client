@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, Col, Container, Row, Toast } from 'react-bootstrap';
+import { Card, Col, Container, Row } from 'react-bootstrap';
 import { useLoaderData } from 'react-router-dom';
 import './Recipe.css'
 import { FcBookmark, FcComboChart } from "react-icons/fc";
@@ -16,11 +16,11 @@ const Recipe = () => {
     };
 
     return (
-        <Container>
+        <Container >
             <Row>
                 {recipes.map((recipe) => (
-                    <Col key={recipe.recipeId}>
-                        <Card border="danger" style={{ width: '20rem' }}>
+                    <Col lg={6} key={recipe.recipeId}>
+                        <Card className='mb-5' border="danger" style={{ width: '20rem' }}>
                             <Card.Header className='d-flex'>
                                 <div className='flex-grow-1'>
                                     {recipe.recipeName}

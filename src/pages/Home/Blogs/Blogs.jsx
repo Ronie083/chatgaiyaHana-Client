@@ -1,12 +1,9 @@
 import React from 'react';
 import { Card, Container, } from 'react-bootstrap';
-import Footer from '../../Shared/Footer/Footer';
-import Header from '../../Shared/Header/Header';
 
 const Blogs = () => {
     return (
         <Container>
-            <Header></Header>
             <Container className='my-5'>
                 <Card className='my-5'>
                     <Card.Header className='d-flex'>
@@ -77,7 +74,6 @@ const Blogs = () => {
                     </Card.Body>
                 </Card>
             </Container>
-            <Footer></Footer>
         </Container>
     );
 };

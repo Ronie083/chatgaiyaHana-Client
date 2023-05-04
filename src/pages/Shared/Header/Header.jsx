@@ -1,10 +1,17 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import logo from '../../../assets/logo.png'
 import './Header.css'
 import { Button, Container, Nav, Navbar } from 'react-bootstrap';
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
+import { AuthContext } from '../../../providers/AuthProvider';
+import { } from "react-icons/fc";
+import { FaUserCircle } from 'react-icons/fa';
 
 const Header = () => {
+
+    const { user } = useContext(AuthContext);
+
+
     return (
         <Container className='text-center'>
             <img className='w-5 h-10' src={logo} alt="" />
@@ -15,14 +22,20 @@ const Header = () => {
                         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                         <Navbar.Collapse id="responsive-navbar-nav">
                             <Nav className="me-auto">
-                                <NavLink to="/" activeClassName="active">Home</NavLink>
-                                <NavLink to="/blog" activeClassName="active">Blog</NavLink>
+                                <NavLink to="/" activeclassname="active">Home</NavLink>
+                                <NavLink to="/blog" activeclassname="active">Blog</NavLink>
                             </Nav>
                             <Nav>
-                                <Nav.Link href="#deets">More deets</Nav.Link>
-                                <Nav.Link eventKey={2} href="#memes">
-                                    <Button variant="dark">Login</Button>
-                                </Nav.Link>
+                                {user &&
+                                    <FaUserCircle
+                                        style={{ fontSize: '2rem', marginRight: '10px'}}></FaUserCircle>
+                                }
+                                {user ?
+                                    <Button variant="dark">LogOut</Button> :
+                                    <Link to="/login">
+                                        <Button variant="dark">Login</Button>
+                                    </Link>
+                                }
                             </Nav>
                         </Navbar.Collapse>
                     </Container>

@@ -44,7 +44,7 @@ const Chef = () => {
                     </Card.Footer>
                 </Card>
             </div>
-            <div className='my-5'>
+            <div className='my-5 '>
                 <Recipe></Recipe>
             </div>
         </Container>

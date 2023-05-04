@@ -1,3 +1,7 @@
 #methodList{
     list-style: none;
 }
+#bookmark{
+    border: 0;
+    background-color: transparent;
+}

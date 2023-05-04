@@ -2,7 +2,7 @@ import React from 'react';
 import { Card, Container, ListGroup } from 'react-bootstrap';
 import { useLoaderData, useParams } from 'react-router-dom';
 import './Chef.css'
-import { FcBookmark, FcCalendar, FcLike, FcReading } from "react-icons/fc";
+import { FcCalendar, FcLike, FcReading } from "react-icons/fc";
 import Recipe from '../Recipe/Recipe';
 
 

@@ -3,7 +3,7 @@ import { Button } from 'react-bootstrap';
 
 const PopularTags = () => {
     return (
-        <div>
+        <div className='mb-5'>
             <h1>Popular Tags</h1>
             <hr />
             <Button className='m-1' variant="danger" href="#">Beef</Button>

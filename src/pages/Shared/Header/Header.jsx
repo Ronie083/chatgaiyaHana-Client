@@ -2,6 +2,7 @@ import React from 'react';
 import logo from '../../../assets/logo.png'
 import './Header.css'
 import { Button, Container, Nav, Navbar } from 'react-bootstrap';
+import { NavLink } from 'react-router-dom';
 
 const Header = () => {
     return (
@@ -14,8 +15,8 @@ const Header = () => {
                         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                         <Navbar.Collapse id="responsive-navbar-nav">
                             <Nav className="me-auto">
-                                <Nav.Link href="/">Home</Nav.Link>
-                                <Nav.Link href="/blog">Blog</Nav.Link>
+                                <NavLink to="/" activeClassName="active">Home</NavLink>
+                                <NavLink to="/blog" activeClassName="active">Blog</NavLink>
                             </Nav>
                             <Nav>
                                 <Nav.Link href="#deets">More deets</Nav.Link>

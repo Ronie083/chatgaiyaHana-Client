@@ -2,3 +2,10 @@ img{
     width: 150px;
     height: 130px;
 }
+.active {
+    font-weight: bold;
+    color: maroon;
+    text-decoration: none;
+    margin: 10px;
+  }
+  

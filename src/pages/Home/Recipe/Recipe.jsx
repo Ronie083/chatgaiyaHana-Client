@@ -1,6 +1,7 @@
 import React from 'react';
 import { Card, ListGroupItem } from 'react-bootstrap';
 import { useLoaderData } from 'react-router-dom';
+import './Recipe.css'
 
 const Recipe = () => {
     const chef = useLoaderData();
@@ -12,10 +13,10 @@ const Recipe = () => {
                     <Card.Header>{recipe.recipeName}</Card.Header>
                     <Card.Body>
                         <Card.Text>
-                            {recipe.ingredients.map(ingredient => <ListGroupItem key={recipe.id}>{ingredient}</ListGroupItem>)}
+                            {recipe.ingredients.map(ingredient => <li key={recipe.rating}>{ingredient}</li>)}
                         </Card.Text>
                         <Card.Text>
-                            {recipe.cookingMethod}
+                            {recipe.cookingMethod.map(method => <li id='methodList' key={recipe.rating}>{method}</li>)}
                         </Card.Text>
                     </Card.Body>
                 </Card>

@@ -1,11 +1,12 @@
-import React, { useContext } from 'react';
-import { Button, Container, Form } from 'react-bootstrap';
+import React, { useContext, useState } from 'react';
+import { Button, Container, Dropdown, Form } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../providers/AuthProvider';
 
 const Register = () => {
 
     const { createUser } = useContext(AuthContext);
+    const [accepted, setAccepted] = useState(false);
 
     const handleRegister = event => {
         event.preventDefault();
@@ -17,13 +18,17 @@ const Register = () => {
 
         console.log(name, email, password, photo)
         createUser(email, password)
-        .then(result => {
-            const createdUser = result.user;
-            console.log(createdUser);
-        })
-        .catch(error => {
-            console.log(error);
-        })
+            .then(result => {
+                const createdUser = result.user;
+                console.log(createdUser);
+            })
+            .catch(error => {
+                console.log(error);
+            })
+    }
+
+    const handleTerms = event => {
+        setAccepted(event.target.checked)
     }
 
     return (
@@ -51,9 +56,17 @@ const Register = () => {
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                    <Form.Check type="checkbox" name='accept' label="Accept terms and conditions" />
+                    <Form.Check
+                    onClick={handleTerms}
+                    type="checkbox" name='accept'
+                        label={
+                            <>
+                            Accept our <Link to="termsAndCon">Terms & Conditions</Link>
+                            </>
+                        }
+                    />
                 </Form.Group>
-                <Button variant="dark" type="submit">
+                <Button variant="dark" disabled={!accepted} type="submit">
                     Register
                 </Button>
                 <Form.Text className="text-success">

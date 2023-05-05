@@ -2,10 +2,11 @@ import React, { useContext, useState } from 'react';
 import { Button, Container, Form } from 'react-bootstrap';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../providers/AuthProvider';
+import { GoogleAuthProvider } from 'firebase/auth';
 
 const Login = () => {
     const [logError, setLogError] = useState('');
-    const { signInUser } = useContext(AuthContext);
+    const { signInUser, googleLogIn, gitLogIn } = useContext(AuthContext);
     const navigate = useNavigate();
     const location = useLocation();
     const from = location.state?.from?.pathname || '/'
@@ -30,6 +31,18 @@ const Login = () => {
                 console.log(error.message);
                 setLogError("Incorrect Password");
             })
+    }
+
+    const handleGoogleSignIn = () =>{
+        console.log('google sign in')
+        googleLogIn()
+        navigate(from, { replace: true })
+    }
+
+    const handleGitHubSignIn = () => {
+        console.log('GitHub sign In')
+        gitLogIn()
+        navigate(from, { replace: true })
     }
 
 
@@ -60,11 +73,14 @@ const Login = () => {
                     {logError}
                 </Form.Text>
             </Form>
-            <div className='text-center my-3'>
+            <div className='text-center my-5'>
+                <hr />
+                <h5>or</h5>
                 <h4>Log In with</h4>
-                <Button className='my-3' variant="outline-success">Google</Button>
+                <hr />
+                <Button className='my-3' onClick={handleGoogleSignIn} variant="outline-success">Google Sign-In</Button>
                 <br />
-                <Button variant="outline-dark">GitHub</Button>
+                <Button onClick={handleGitHubSignIn} variant="outline-dark">GitHub Sign-In</Button>
             </div>
         </Container>
     );

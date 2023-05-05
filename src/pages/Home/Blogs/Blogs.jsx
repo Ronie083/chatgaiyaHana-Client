@@ -1,13 +1,34 @@
 import React from 'react';
-import { Card, Container, } from 'react-bootstrap';
+import { Card, Container, Button } from 'react-bootstrap';
+import { PDFDownloadLink, PDFViewer, Document, Page, Text } from '@react-pdf/renderer';
 
 const Blogs = () => {
+    const [showPDF, setShowPDF] = React.useState(false);
+    const handlePDFClick = () => {
+        setShowPDF(true);
+    };
+
+    const BlogPDF = () => {
+        return (
+          <Document>
+            <Page>
+              <Text>Blog Information</Text>
+            </Page>
+          </Document>
+        );
+      };
+
     return (
         <Container>
             <Container className='my-5'>
                 <Card className='my-5'>
                     <Card.Header className='d-flex'>
                         1. Tell us the differences between uncontrolled and controlled components.
+                        <PDFDownloadLink document={<BlogPDF />} fileName='blog.pdf'>
+                            <Button className='ml-auto' onClick={handlePDFClick}>
+                                Download PDF
+                            </Button>
+                        </PDFDownloadLink>
                     </Card.Header>
                     <Card.Body>
                         <Card.Text>
@@ -22,6 +43,11 @@ const Blogs = () => {
                 <Card className='mb-5'>
                     <Card.Header className='d-flex'>
                         2. How to validate React props using PropTypes
+                        <PDFDownloadLink document={<BlogPDF />} fileName='blog.pdf'>
+                            <Button className='ml-auto' onClick={handlePDFClick}>
+                                Download PDF
+                            </Button>
+                        </PDFDownloadLink>
                     </Card.Header>
                     <Card.Body>
                         <Card.Text>
@@ -43,6 +69,11 @@ const Blogs = () => {
                 <Card className='mb-5'>
                     <Card.Header className='d-flex'>
                         3. Tell us the difference between nodejs and express js.
+                        <PDFDownloadLink document={<BlogPDF />} fileName='blog.pdf'>
+                            <Button className='ml-auto' onClick={handlePDFClick}>
+                                Download PDF
+                            </Button>
+                        </PDFDownloadLink>
                     </Card.Header>
                     <Card.Body>
                         <Card.Text>
@@ -59,6 +90,11 @@ const Blogs = () => {
                 <Card className='mb-5'>
                     <Card.Header className='d-flex'>
                         4. What is a custom hook, and why will you create a custom hook?
+                        <PDFDownloadLink document={<BlogPDF />} fileName='blog.pdf'>
+                            <Button className='ml-auto' onClick={handlePDFClick}>
+                                Download PDF
+                            </Button>
+                        </PDFDownloadLink>
                     </Card.Header>
                     <Card.Body>
                         <Card.Text>

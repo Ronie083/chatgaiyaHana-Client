@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../providers/AuthProvider';
 
 const Register = () => {
+    const [regError, setRegError] = useState('');
 
     const { createUser } = useContext(AuthContext);
     const [accepted, setAccepted] = useState(false);
@@ -21,9 +22,12 @@ const Register = () => {
             .then(result => {
                 const createdUser = result.user;
                 console.log(createdUser);
+                setRegError('');
+                event.target.reset();
             })
             .catch(error => {
-                console.log(error);
+                console.log(error.message);
+                setRegError(error.message);
             })
     }
 
@@ -69,11 +73,9 @@ const Register = () => {
                 <Button variant="dark" disabled={!accepted} type="submit">
                     Register
                 </Button>
-                <Form.Text className="text-success">
-
-                </Form.Text>
+                <br />
                 <Form.Text className="text-danger">
-
+                    {regError}
                 </Form.Text>
             </Form>
         </Container>

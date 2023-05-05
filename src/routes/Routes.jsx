@@ -38,7 +38,7 @@ const router = createBrowserRouter([
             {
                 path: ':id',
                 element: <PrivateRoutes><Chef></Chef></PrivateRoutes>,
-                loader: ({ params }) => fetch(`http://localhost:5000/recipes/${params.id}`),
+                loader: ({ params }) => fetch(`https://chatgaiya-hana-server.vercel.app/recipes/${params.id}`),
             },
             {
                 path:'login',

@@ -9,7 +9,13 @@ import { FaUserCircle } from 'react-icons/fa';
 
 const Header = () => {
 
-    const { user } = useContext(AuthContext);
+    const { user, logOut } = useContext(AuthContext);
+
+    const handleLogOut = () => {
+        logOut()
+            .then()
+            .catch(error => console.log(error));
+    }
 
 
     return (
@@ -22,17 +28,17 @@ const Header = () => {
                         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                         <Navbar.Collapse id="responsive-navbar-nav">
                             <Nav className="me-auto">
-                                <NavLink to="/" activeclassname="active">Home</NavLink>
-                                <NavLink to="/blog" activeclassname="active">Blog</NavLink>
+                                <NavLink style={{ textDecoration: 'none', marginRight: '10px' }} to="/" activeclassname="active">Home</NavLink>
+                                <NavLink style={{ textDecoration: 'none' }} to="/blog" activeclassname="active">Blog</NavLink>
                             </Nav>
                             <Nav>
                                 {user &&
                                     <FaUserCircle
-                                        style={{ fontSize: '2rem', marginRight: '10px'}}></FaUserCircle>
+                                        style={{ fontSize: '2rem', marginRight: '10px' }}></FaUserCircle>
                                 }
                                 {user ?
-                                    <Button variant="dark">LogOut</Button> :
-                                    <Link to="/login">
+                                    <Button onClick={handleLogOut} variant="dark">LogOut</Button> :
+                                    <Link to="login">
                                         <Button variant="dark">Login</Button>
                                     </Link>
                                 }

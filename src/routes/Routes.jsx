@@ -4,6 +4,9 @@ import Home from "../pages/Home/Home/Home";
 import Chef from "../pages/Home/Chef/Chef";
 import RecipeLayout from "../layouts/RecipeLayout";
 import Blogs from "../pages/Home/Blogs/Blogs";
+import Login from "../pages/Login/Login/Login";
+import Register from "../pages/Login/Register/Register";
+import PrivateRoutes from "./PrivateRoutes";
 
 const router = createBrowserRouter([
     {
@@ -15,8 +18,16 @@ const router = createBrowserRouter([
                 element: <Home></Home>
             },
             {
-                path: '/blog',
+                path: 'blog',
                 element: <Blogs></Blogs>
+            },
+            {
+                path:'login',
+                element:<Login></Login>
+            },
+            {
+                path:'register',
+                element:<Register></Register>
             }
         ]
     },
@@ -26,8 +37,16 @@ const router = createBrowserRouter([
         children: [
             {
                 path: ':id',
-                element: <Chef></Chef>,
+                element: <PrivateRoutes><Chef></Chef></PrivateRoutes>,
                 loader: ({ params }) => fetch(`http://localhost:5000/recipes/${params.id}`),
+            },
+            {
+                path:'login',
+                element:<Login></Login>
+            },
+            {
+                path:'register',
+                element:<Register></Register>
             }
         ]
     }
